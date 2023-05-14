@@ -20,3 +20,5 @@ git remote add origin ******   // 添加新的远程地址
 
 
 使用git push --set-upstream origin main后看看本地关联远程分支是否生效
+
+在VScode的terminal里也能add commit push吧
