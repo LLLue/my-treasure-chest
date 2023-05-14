@@ -1,3 +1,19 @@
 add something for testing
 
 所以也可以添加中文描述么（√）
+
+
+关于github修改项目名称：
+笔记来源：https://blog.csdn.net/Tisfy/article/details/124348891
+
+github上修改项目名称后，可以直接在Github上修改，并且本地不做任何更改。（也能推送到新的项目地址）
+但这样不好。
+git remote rename origin old-origin重命名旧地址
+git remote add origin git@github.com:LetMeFly666/MatFeature.git添加新地址
+git pull -u origin master将新地址设为默认
+
+
+（https://blog.csdn.net/weixin_45844049/article/details/113178174）
+可以使用git remote -v 查看项目远端地址，然后使用下面这俩命令删除旧的远程地址添加新的远程地址
+git remote rm origin // 删除旧的远程地址
+git remote add origin ******   // 添加新的远程地址
