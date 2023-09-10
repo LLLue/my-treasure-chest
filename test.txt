@@ -24,3 +24,5 @@ git remote add origin ******   // 添加新的远程地址
 在VScode的terminal里也能add commit push吧
 
 尝试一下merge吧
+
+尝试通过Vi编辑器写入提交信息
