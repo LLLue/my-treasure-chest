@@ -40,3 +40,5 @@ git remote add origin ******   // 添加新的远程地址
 我想保留本地的修改
 
 回归一下
+
+尝试merge
