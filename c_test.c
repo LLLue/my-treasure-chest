@@ -75,6 +75,8 @@ void ListTraverseR(LinkList L, void (*vist)(ElemType *))
     }
 }
 
+
+
 int main()
 {
 
