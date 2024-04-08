@@ -34,7 +34,7 @@ void CreatLinkFuncR(LinkList *L, int n, void (*input)(ElemType *))
     // 尾插法创建单链表
     *L = (LinkList)malloc(sizeof(LNode));
     LinkList s, r;
-    r = L;
+    r = *L;
     for (; n > 0; n--)
     {
         s = (LinkList)malloc(sizeof(LNode));
@@ -48,11 +48,11 @@ void CreatLinkFuncR(LinkList *L, int n, void (*input)(ElemType *))
 /* 输出链表 */
 void visit(ElemType *ep)
 {
-    printf("%d", *ep);
+    printf("%d ", *ep);
 }
 
 /* 链表遍历 */
-void ListTraverse(LinkList L, void (*vist)(ElemType *))
+void ListTraverse(LinkList L, void (*visit)(ElemType *))
 {
     // 遍历L中的每个元素且调用Visit函数访问它
     LinkList p = L->next;
@@ -64,10 +64,10 @@ void ListTraverse(LinkList L, void (*vist)(ElemType *))
 }
 
 /* 尾插法链表遍历 */
-void ListTraverseR(LinkList L, void (*vist)(ElemType *))
+void ListTraverseR(LinkList L, void (*visit)(ElemType *))
 {
     // 遍历L中的每个元素且调用Visit函数访问它
-    LinkList p = L;
+    LinkList p = L->next;
     while (p != NULL)
     {
         visit(&(p->data));
@@ -75,24 +75,21 @@ void ListTraverseR(LinkList L, void (*vist)(ElemType *))
     }
 }
 
-
-
 int main()
 {
 
     LinkList L, S;
 
-    S = L;
+    L = NULL; // 初始化L为NULL
 
-    CreatLinkFuncR(&L, 5, input);
+    CreatLinkFuncR(&L, 5, input); // 将L的地址传递给CreatLinkFuncR函数
 
     printf("print List Begin!\n");
 
-    ListTraverseR(S, visit);
+    ListTraverse(L, visit); // 修改为遍历L
 
-    /* 熟悉一下vscode阅读代码快捷键 */
-
-    ListTraverseR(S, visit);
+    printf("\n");
 
     return 0;
 }
+
