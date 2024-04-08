@@ -29,10 +29,10 @@ void CreatLinkF(LinkList *L, int n, void (*input)(ElemType *))
     }
 }
 
-void CreatLinkFuncR(LinkList L, int n, void (*input)(ElemType *))
+void CreatLinkFuncR(LinkList *L, int n, void (*input)(ElemType *))
 {
     // 尾插法创建单链表
-    L = (LinkList)malloc(sizeof(LNode));
+    *L = (LinkList)malloc(sizeof(LNode));
     LinkList s, r;
     r = L;
     for (; n > 0; n--)
@@ -84,7 +84,7 @@ int main()
 
     S = L;
 
-    CreatLinkFuncR(L, 5, input);
+    CreatLinkFuncR(&L, 5, input);
 
     printf("print List Begin!\n");
 
